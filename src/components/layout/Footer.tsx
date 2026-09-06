@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CONTACT, SOCIALS } from "@/lib/data";
 
 export default function Footer() {
@@ -6,7 +7,16 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <div>
-                        <span className="font-mono text-lg tracking-tight font-medium">codevela</span>
+                        <a href="#" className="inline-flex items-center gap-2.5 group">
+                            <Image
+                                src="/logo.png"
+                                alt="Codevela Logo"
+                                width={32}
+                                height={32}
+                                className="w-8 h-8 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-200"
+                            />
+                            <span className="font-mono text-lg tracking-tight font-bold">codevela</span>
+                        </a>
                         <p className="mt-3 text-sm text-base-gray-dark max-w-xs leading-relaxed">
                             Solusi IT & pemrograman untuk kebutuhan bisnis dan akademik.
                         </p>

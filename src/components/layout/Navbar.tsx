@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CONTACT } from "@/lib/data";
 
 const NAV_LINKS = [
@@ -12,7 +13,17 @@ export default function Navbar() {
     return (
         <header className="fixed top-0 inset-x-0 z-50 bg-base-white/80 backdrop-blur border-b border-base-gray-light">
             <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                <span className="font-mono text-lg tracking-tight">codevela</span>
+                <a href="#" className="flex items-center gap-2.5 group">
+                    <Image
+                        src="/logo.png"
+                        alt="Codevela Logo"
+                        width={36}
+                        height={36}
+                        className="w-20 h-20 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-200"
+                        priority
+                    />
+
+                </a>
 
                 <div className="hidden md:flex items-center gap-8 text-sm text-base-gray-dark">
                     {NAV_LINKS.map((link) => (
@@ -38,4 +49,4 @@ export default function Navbar() {
             </nav>
         </header>
     );
-}
+}
