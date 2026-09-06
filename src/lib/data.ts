@@ -186,12 +186,12 @@ export const TESTIMONIALS: Testimonial[] = [
     {
         name: "Chris",
         role: "Tugas Kuliah",
-        quote: "Udah aku cek dan sesuai permintaan, mantap banget hasilnya 🤩🤩",
+        quote: "Udah aku cek dan sesuai permintaan, mantap banget hasilnya ",
     },
     {
         name: "B***",
         role: "Tugas Kuliah",
-        quote: "Makasii banyaakkkkk yaaa kakk 🥰🥰🥰🥰🥰",
+        quote: "Makasii banyaakkkkk yaaa kakk ",
     },
     {
         name: "Klien C",
