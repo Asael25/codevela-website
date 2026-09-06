@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base-black: #0A0A0A;
+  --color-base-white: #FFFFFF;
+  --color-base-gray-light: #F5F5F5;
+  --color-base-gray: #A1A1A1;
+  --color-base-gray-dark: #404040;
+
+  --color-accent: #00D46A;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background-image: radial-gradient(circle, #00000012 1px, transparent 1px);
+  background-size: 24px 24px;
+}
