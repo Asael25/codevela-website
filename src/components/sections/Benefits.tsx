@@ -19,11 +19,11 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 36 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.45, ease: "easeOut" as const },
+        transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
     },
 };
 
@@ -33,10 +33,10 @@ export default function Benefits() {
             <div className="max-w-6xl mx-auto px-6">
 
                 <motion.div
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true, amount: 0.3, margin: "0px 0px -60px 0px" }}
+                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                 >
                     <span className="font-mono text-xs uppercase tracking-widest text-base-gray font-semibold">Komitmen Utama</span>
                     <h2 className="mt-1.5 font-mono text-2xl md:text-3xl font-semibold text-base-black">
@@ -48,7 +48,7 @@ export default function Benefits() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
                     className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4"
                 >
                     {BENEFITS.map((benefit) => {
@@ -57,10 +57,10 @@ export default function Benefits() {
                             <motion.div
                                 key={benefit.title}
                                 variants={itemVariants}
-                                className="group p-7 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-md hover:border-base-gray-medium transition-all duration-200"
+                                className="group p-7 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-base-black/30 transition-all duration-300 cursor-default"
                             >
-                                <div className="w-9 h-9 rounded-lg border border-base-gray-light bg-base-subtle flex items-center justify-center mb-5 group-hover:border-base-gray-medium transition-colors duration-200">
-                                    <IconComponent className="w-4 h-4 text-base-gray-dark" />
+                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center mb-5 group-hover:bg-base-black group-hover:border-base-black transition-all duration-300">
+                                    <IconComponent className="w-5 h-5 text-base-gray-dark group-hover:text-base-white transition-colors duration-300" />
                                 </div>
 
                                 <h3 className="font-mono text-base font-semibold text-base-black">

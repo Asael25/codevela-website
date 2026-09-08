@@ -12,8 +12,8 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 const stepVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+    hidden: { opacity: 0, y: 36 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 export default function Process() {
@@ -22,7 +22,13 @@ export default function Process() {
             <div className="max-w-4xl mx-auto px-6">
 
                 {/* Header */}
-                <div className="text-center mb-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3, margin: "0px 0px -60px 0px" }}
+                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-center mb-10"
+                >
                     <span className="font-mono text-xs uppercase tracking-widest text-base-gray font-semibold">Cara Pemesanan</span>
                     <h2 className="mt-1.5 font-mono text-2xl md:text-3xl font-semibold text-base-black">
                         How to Order
@@ -30,7 +36,7 @@ export default function Process() {
                     <p className="mt-2 text-sm text-base-gray-dark max-w-md mx-auto">
                         Alur pemesanan transparan dari diskusi awal hingga penyerahan source code.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Zigzag steps */}
                 <div className="space-y-2 md:space-y-0">
@@ -41,14 +47,14 @@ export default function Process() {
                             variants={stepVariant}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
-                            className="p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-md hover:border-base-gray-medium transition-all duration-300"
+                            viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
+                            className="group p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-base-black/30 transition-all duration-300 cursor-default"
                         >
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0">
-                                    {(() => { const I = ICON_MAP["MessageSquareCode"]; return <I className="w-5 h-5 text-base-gray-dark" />; })()}
+                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0 group-hover:bg-base-black group-hover:border-base-black transition-all duration-300">
+                                    {(() => { const I = ICON_MAP["MessageSquareCode"]; return <I className="w-5 h-5 text-base-gray-dark group-hover:text-base-white transition-colors duration-300" />; })()}
                                 </div>
-                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white">
+                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white group-hover:scale-105 transition-transform">
                                     01
                                 </span>
                             </div>
@@ -80,16 +86,16 @@ export default function Process() {
                             variants={stepVariant}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
-                            className="p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-md hover:border-base-gray-medium transition-all duration-300"
+                            viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
+                            className="group p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-base-black/30 transition-all duration-300 cursor-default"
                         >
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0">
-                                    {(() => { const I = ICON_MAP["Calculator"]; return <I className="w-5 h-5 text-base-gray-dark" />; })()}
+                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0 group-hover:bg-base-black group-hover:border-base-black transition-all duration-300">
+                                    {(() => { const I = ICON_MAP["Calculator"]; return <I className="w-5 h-5 text-base-gray-dark group-hover:text-base-white transition-colors duration-300" />; })()}
                                 </div>
-                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white">
-                                    02
-                                </span>
+                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white group-hover:scale-105 transition-transform">
+                                     02
+                                 </span>
                             </div>
                             <h3 className="mt-4 font-mono text-sm font-bold tracking-tight text-base-black">
                                 {PROCESS_STEPS[1].title}
@@ -119,14 +125,14 @@ export default function Process() {
                             variants={stepVariant}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
-                            className="p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-md hover:border-base-gray-medium transition-all duration-300"
+                            viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
+                            className="group p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-base-black/30 transition-all duration-300 cursor-default"
                         >
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0">
-                                    {(() => { const I = ICON_MAP["Terminal"]; return <I className="w-5 h-5 text-base-gray-dark" />; })()}
+                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0 group-hover:bg-base-black group-hover:border-base-black transition-all duration-300">
+                                    {(() => { const I = ICON_MAP["Terminal"]; return <I className="w-5 h-5 text-base-gray-dark group-hover:text-base-white transition-colors duration-300" />; })()}
                                 </div>
-                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white">
+                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white group-hover:scale-105 transition-transform">
                                     03
                                 </span>
                             </div>
@@ -158,14 +164,14 @@ export default function Process() {
                             variants={stepVariant}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
-                            className="p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-md hover:border-base-gray-medium transition-all duration-300"
+                            viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
+                            className="group p-6 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-base-black/30 transition-all duration-300 cursor-default"
                         >
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0">
-                                    {(() => { const I = ICON_MAP["CheckCircle2"]; return <I className="w-5 h-5 text-base-gray-dark" />; })()}
+                                <div className="w-10 h-10 rounded-xl border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0 group-hover:bg-base-black group-hover:border-base-black transition-all duration-300">
+                                    {(() => { const I = ICON_MAP["CheckCircle2"]; return <I className="w-5 h-5 text-base-gray-dark group-hover:text-base-white transition-colors duration-300" />; })()}
                                 </div>
-                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white">
+                                <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-base-black text-base-white group-hover:scale-105 transition-transform">
                                     04
                                 </span>
                             </div>

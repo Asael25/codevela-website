@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CONTACT, SOCIALS } from "@/lib/data";
 
 const NAV_SHORTCUTS = [
-    { href: "#benefit", label: "Kenapa Kami" },
+    { href: "#benefit", label: "Codevela" },
     { href: "#alur-kerja", label: "Alur Kerja" },
     { href: "#layanan", label: "Layanan & Harga" },
     { href: "#portofolio", label: "Portofolio" },

@@ -9,10 +9,10 @@ export default function CtaBanner() {
         <section className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 36 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="relative rounded-2xl bg-base-black text-base-white p-8 md:p-12 overflow-hidden"
                 >
                     {/* Subtle background texture — monochrome grid overlay */}

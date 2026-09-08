@@ -50,12 +50,18 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Trust signal */}
-                    <motion.div variants={item} className="mt-8 flex items-center justify-center md:justify-start gap-5 text-xs text-base-gray-dark font-medium">
-                        <span className="font-mono">10+ proyek selesai</span>
-                        <span className="w-px h-3 bg-base-gray" />
-                        <span className="font-mono">Respons cepat</span>
-                        <span className="w-px h-3 bg-base-gray" />
-                        <span className="font-mono">Garansi bug</span>
+                    <motion.div variants={item} className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-2.5 text-xs text-base-gray-dark font-medium">
+                        <span className="font-mono px-2.5 py-1 rounded-md bg-base-white border border-base-gray-light hover:border-base-black transition-colors shadow-xs">
+                            10+ proyek selesai
+                        </span>
+                        <span className="w-px h-3 bg-base-gray hidden sm:inline-block" />
+                        <span className="font-mono px-2.5 py-1 rounded-md bg-base-white border border-base-gray-light hover:border-base-black transition-colors shadow-xs">
+                            Respons cepat
+                        </span>
+                        <span className="w-px h-3 bg-base-gray hidden sm:inline-block" />
+                        <span className="font-mono px-2.5 py-1 rounded-md bg-base-white border border-base-gray-light hover:border-base-black transition-colors shadow-xs">
+                            Garansi bug
+                        </span>
                     </motion.div>
                 </motion.div>
 
@@ -64,14 +70,20 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
-                    className="rounded-xl bg-base-black text-base-white overflow-hidden shadow-2xl border border-white/5 rotate-[-1deg] md:rotate-[-1deg]"
+                    className="group rounded-xl bg-base-black text-base-white overflow-hidden shadow-2xl border border-white/10 hover:border-white/25 rotate-[-1deg] hover:rotate-0 transition-all duration-300"
                 >
                     {/* Terminal titlebar */}
-                    <div className="flex items-center gap-2 px-4 py-3 border-b border-white/8 bg-white/4">
-                        <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                        <span className="ml-2 font-mono text-xs text-white/25">bash — codevela</span>
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/5">
+                        <div className="flex items-center gap-2">
+                            <span className="w-2.5 h-2.5 rounded-full bg-white/20 group-hover:bg-red-400/80 transition-colors" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-white/20 group-hover:bg-amber-400/80 transition-colors" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-white/20 group-hover:bg-emerald-400/80 transition-colors" />
+                            <span className="ml-2 font-mono text-xs text-white/40">bash — codevela-cli</span>
+                        </div>
+                        <span className="flex items-center gap-1.5 font-mono text-[10px] text-emerald-400/90 bg-emerald-400/10 px-2 py-0.5 rounded-full border border-emerald-400/20">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            <span>ready</span>
+                        </span>
                     </div>
                     <div className="p-5 font-mono text-sm space-y-2.5">
                         {terminalLines.map((line, i) => (
