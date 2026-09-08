@@ -36,15 +36,15 @@ export default function Navbar() {
                 : "bg-base-white/70 backdrop-blur-sm border-b border-base-gray-light/50"
                 }`}
         >
-            <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <nav className="max-w-6xl mx-auto px-6 h-16 md:h-18 flex items-center justify-between">
                 {/* Logo */}
                 <a href="#" className="flex items-center gap-2.5 group shrink-0" onClick={() => setMenuOpen(false)}>
                     <Image
                         src="/logo.png"
                         alt="Codevela Logo"
-                        width={120}
-                        height={48}
-                        className="h-10 w-auto object-contain mix-blend-multiply group-hover:opacity-80 transition-opacity duration-200"
+                        width={160}
+                        height={64}
+                        className="h-12 md:h-14 w-auto object-contain mix-blend-multiply group-hover:opacity-80 transition-opacity duration-200"
                         priority
                     />
                 </a>

@@ -29,7 +29,7 @@ const itemVariants = {
 
 export default function Benefits() {
     return (
-        <section id="benefit" className="py-12 md:py-16 border-t border-base-gray-light">
+        <section id="benefit" className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
 
                 <motion.div

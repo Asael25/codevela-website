@@ -16,27 +16,21 @@ const item = {
 
 const terminalLines = [
     { prompt: "$", text: "codevela init --project your-idea" },
-    { prompt: "✓", text: "clean code, bukan asal jalan" },
-    { prompt: "✓", text: "deadline ditepati, tanpa drama" },
-    { prompt: "✓", text: "progres transparan dari awal" },
+    { prompt: "✓", text: "arsitektur clean code & standar industri" },
+    { prompt: "✓", text: "komitmen tepat waktu & hasil presisi" },
+    { prompt: "✓", text: "progres transparan & komunikasi aktif" },
 ];
 
 export default function Hero() {
     return (
-        <section className="pt-28 pb-12 md:pt-36 md:pb-16">
+        <section className="pt-36 pb-16 md:pt-44 md:pb-20">
             <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                 {/* Text side */}
                 <motion.div variants={container} initial="hidden" animate="show" className="text-center md:text-left">
-                    <motion.div variants={item}>
-                        <span className="inline-block font-mono text-xs tracking-widest uppercase text-base-gray-medium bg-base-subtle px-3 py-1 rounded-full border border-base-gray-light">
-                            Jasa Web & App Development
-                        </span>
-                    </motion.div>
-
                     <motion.h1
                         variants={item}
-                        className="mt-4 font-mono text-3xl md:text-[2.6rem] font-semibold tracking-tight leading-[1.2]"
+                        className="font-mono text-3xl md:text-[2.6rem] font-semibold tracking-tight leading-[1.2]"
                     >
                         Solusi IT Profesional<br />
                         <span className="text-base-gray-medium font-medium">untuk Bisnis & Akademik.</span>
@@ -56,11 +50,11 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Trust signal */}
-                    <motion.div variants={item} className="mt-8 flex items-center justify-center md:justify-start gap-5 text-xs text-base-gray">
+                    <motion.div variants={item} className="mt-8 flex items-center justify-center md:justify-start gap-5 text-xs text-base-gray-dark font-medium">
                         <span className="font-mono">10+ proyek selesai</span>
-                        <span className="w-px h-3 bg-base-gray-light" />
+                        <span className="w-px h-3 bg-base-gray" />
                         <span className="font-mono">Respons cepat</span>
-                        <span className="w-px h-3 bg-base-gray-light" />
+                        <span className="w-px h-3 bg-base-gray" />
                         <span className="font-mono">Garansi bug</span>
                     </motion.div>
                 </motion.div>

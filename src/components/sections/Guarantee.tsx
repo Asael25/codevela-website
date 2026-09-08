@@ -12,7 +12,7 @@ const GUARANTEE_ICONS: Record<string, LucideIcon> = {
 
 export default function Guarantee() {
     return (
-        <section className="py-12 md:py-16 border-t border-base-gray-light">
+        <section className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="mb-8">
                     <span className="font-mono text-xs uppercase tracking-widest text-base-gray font-semibold">Jaminan Kami</span>

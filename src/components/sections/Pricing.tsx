@@ -3,7 +3,7 @@ import { PRICING, PRICING_DISCLAIMER } from "@/lib/data";
 
 export default function Pricing() {
     return (
-        <section id="layanan" className="py-12 md:py-16 border-t border-base-gray-light">
+        <section id="layanan" className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="mb-8">
                     <span className="font-mono text-xs uppercase tracking-widest text-base-gray">Layanan</span>

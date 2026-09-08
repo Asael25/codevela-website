@@ -12,7 +12,7 @@ export default function Portfolio() {
         active === "Semua" ? PORTFOLIO : PORTFOLIO.filter((item) => item.category === active);
 
     return (
-        <section id="portofolio" className="py-12 md:py-16 border-t border-base-gray-light">
+        <section id="portofolio" className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
 
                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">

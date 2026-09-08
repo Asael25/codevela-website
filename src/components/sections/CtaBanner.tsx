@@ -6,7 +6,7 @@ import { MessageSquare, ArrowUpRight } from "lucide-react";
 
 export default function CtaBanner() {
     return (
-        <section className="py-12 md:py-16 border-t border-base-gray-light">
+        <section className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -39,19 +39,16 @@ export default function CtaBanner() {
                         </p>
 
                         <div className="mt-8 flex flex-wrap items-center gap-3">
-                            {CONTACT.admins.map((admin, index) => (
+                            {CONTACT.admins.map((admin) => (
                                 <a
                                     key={admin.phone}
                                     href={admin.waLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${index === 0
-                                        ? "bg-white text-base-black hover:bg-base-gray-light"
-                                        : "bg-white/10 text-white hover:bg-white/20 border border-white/15"
-                                        }`}
+                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 bg-white text-base-black hover:bg-base-gray-light"
                                 >
                                     <MessageSquare className="w-4 h-4" />
-                                    <span>Chat {admin.name}</span>
+                                    <span>{admin.name}</span>
                                     <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                                 </a>
                             ))}

@@ -18,7 +18,7 @@ const stepVariant = {
 
 export default function Process() {
     return (
-        <section id="alur-kerja" className="py-12 md:py-16 border-t border-base-gray-light">
+        <section id="alur-kerja" className="py-10 md:py-13 border-t border-base-gray-light">
             <div className="max-w-4xl mx-auto px-6">
 
                 {/* Header */}
@@ -63,13 +63,13 @@ export default function Process() {
 
                     {/* CONNECTOR 01 → 02 (right) */}
                     <div className="my-2 flex justify-center md:-my-3 relative z-10">
-                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-light">
+                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-dark">
                             <svg width="180" height="54" viewBox="0 0 180 54" fill="none">
-                                <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="1.5" strokeDasharray="5 4" strokeLinecap="round" />
-                                <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+                                <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <div className="flex md:hidden text-base-gray py-2">
+                        <div className="flex md:hidden text-base-gray-dark py-2">
                             <ArrowDown className="w-5 h-5 animate-bounce" />
                         </div>
                     </div>
@@ -102,13 +102,13 @@ export default function Process() {
 
                     {/* CONNECTOR 02 → 03 (left) */}
                     <div className="my-2 flex justify-center md:-my-3 relative z-10">
-                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-light">
+                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-dark">
                             <svg width="180" height="54" viewBox="0 0 180 54" fill="none">
-                                <path d="M 150 5 C 80 5, 30 18, 30 44" stroke="currentColor" strokeWidth="1.5" strokeDasharray="5 4" strokeLinecap="round" />
-                                <path d="M 24 38 L 30 46 L 36 38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M 150 5 C 80 5, 30 18, 30 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+                                <path d="M 24 38 L 30 46 L 36 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <div className="flex md:hidden text-base-gray py-2">
+                        <div className="flex md:hidden text-base-gray-dark py-2">
                             <ArrowDown className="w-5 h-5 animate-bounce" />
                         </div>
                     </div>
@@ -141,13 +141,13 @@ export default function Process() {
 
                     {/* CONNECTOR 03 → 04 (right) */}
                     <div className="my-2 flex justify-center md:-my-3 relative z-10">
-                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-light">
+                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-dark">
                             <svg width="180" height="54" viewBox="0 0 180 54" fill="none">
-                                <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="1.5" strokeDasharray="5 4" strokeLinecap="round" />
-                                <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+                                <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
-                        <div className="flex md:hidden text-base-gray py-2">
+                        <div className="flex md:hidden text-base-gray-dark py-2">
                             <ArrowDown className="w-5 h-5 animate-bounce" />
                         </div>
                     </div>
@@ -177,12 +177,6 @@ export default function Process() {
                             </p>
                         </motion.div>
                     </div>
-                </div>
-
-                {/* Footer tagline */}
-                <div className="mt-12 pt-5 border-t border-base-gray-light flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-base-gray gap-2">
-                    <span>JASA WEB & APP DEV</span>
-                    <span>IG: @CODEVELA.ID</span>
                 </div>
             </div>
         </section>

@@ -36,7 +36,7 @@ function TikTokIcon() {
 export default function Footer() {
     return (
         <footer className="border-t-2 border-base-gray-light bg-base-black text-base-white/80">
-            <div className="max-w-6xl mx-auto px-6 pt-14 pb-8">
+            <div className="max-w-6xl mx-auto px-6 pt-12 md:pt-14 pb-8">
 
                 {/* Footer columns — flex layout, avoids grid column math bugs */}
                 <div className="flex flex-col md:flex-row gap-10 md:gap-8">
