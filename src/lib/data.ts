@@ -217,7 +217,7 @@ export const TESTIMONIALS: Testimonial[] = [
     {
         name: "B***",
         role: "Tugas Kuliah",
-        quote: "Makasii banyaakkkkk yaaa kakk ",
+        quote: "Terimakasih banyak kak projeknya lengkap, adminnya baik dan ramah👍🤩"
     },
     {
         name: "Dimas P***",
