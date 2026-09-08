@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import PortfolioCard from "@/components/ui/PortfolioCard";
 import { PORTFOLIO, PORTFOLIO_CATEGORIES, PortfolioCategory } from "@/lib/data";
 
@@ -12,35 +12,54 @@ export default function Portfolio() {
         active === "Semua" ? PORTFOLIO : PORTFOLIO.filter((item) => item.category === active);
 
     return (
-        <section id="portofolio" className="py-14 md:py-20 border-t border-base-gray-light">
+        <section id="portofolio" className="py-12 md:py-16 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
-                <h2 className="font-mono text-2xl md:text-3xl font-medium max-w-lg">Portofolio</h2>
 
-                <div className="mt-8 flex flex-wrap gap-2">
-                    {PORTFOLIO_CATEGORIES.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => setActive(cat)}
-                            className={`px-4 py-2 rounded-full text-sm transition-colors ${active === cat
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+                    <div>
+                        <span className="font-mono text-xs uppercase tracking-widest text-base-gray">Hasil Kerja</span>
+                        <h2 className="mt-1.5 font-mono text-2xl md:text-3xl font-medium text-base-black">
+                            Portofolio
+                        </h2>
+                    </div>
+
+                    {/* Filter pills */}
+                    <div className="flex flex-wrap gap-1.5">
+                        {PORTFOLIO_CATEGORIES.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setActive(cat)}
+                                className={`px-3 py-1.5 rounded-full text-xs font-medium font-mono transition-all duration-150 ${active === cat
                                     ? "bg-base-black text-base-white"
-                                    : "bg-base-gray-light text-base-gray-dark hover:bg-base-gray-light/70"
-                                }`}
-                        >
-                            {cat}
-                        </button>
-                    ))}
+                                    : "bg-base-white border border-base-gray-light text-base-gray-dark hover:border-base-gray-medium hover:text-base-black shadow-sm"
+                                    }`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
-                <motion.div
-                    layout
-                    className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6"
-                >
-                    {filtered.map((item) => (
-                        <motion.div key={item.title} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                            <PortfolioCard item={item} />
-                        </motion.div>
-                    ))}
-                </motion.div>
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={active}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    >
+                        {filtered.map((item) => (
+                            <PortfolioCard key={item.title} item={item} />
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
+
+                {filtered.length === 0 && (
+                    <p className="text-center text-sm text-base-gray py-12">
+                        Belum ada portofolio untuk kategori ini.
+                    </p>
+                )}
             </div>
         </section>
     );

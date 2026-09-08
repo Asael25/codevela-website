@@ -1,19 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-base-black: #0A0A0A;
+  --color-base-black: #111111;
   --color-base-white: #FFFFFF;
-  --color-base-gray-light: #F5F5F5;
-  --color-base-gray: #A1A1A1;
-  --color-base-gray-dark: #404040;
-
-  --color-accent: #00D46A;
+  --color-base-subtle: #F2F2F2;
+  --color-base-gray-light: #D8D4CE;
+  --color-base-gray: #9A9590;
+  --color-base-gray-medium: #706C68;
+  --color-base-gray-dark: #3D3A37;
 
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }
 
+/* Body — neutral light gray + grid buku tulis */
 body {
-  background-image: radial-gradient(circle, #00000012 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-color: #F2F2F2;
+  background-image:
+    linear-gradient(to right, #00000010 1px, transparent 1px),
+    linear-gradient(to bottom, #00000010 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Swiper — equal card heights per row */
+.swiper-wrapper {
+  align-items: stretch !important;
+}
+.swiper-slide {
+  height: auto !important;
+}
+
+/* Swiper pagination dots monochrome */
+.swiper-pagination-bullet {
+  background: #9A9590 !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #111111 !important;
 }

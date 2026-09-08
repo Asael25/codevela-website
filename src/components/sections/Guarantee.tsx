@@ -12,29 +12,34 @@ const GUARANTEE_ICONS: Record<string, LucideIcon> = {
 
 export default function Guarantee() {
     return (
-        <section className="py-14 md:py-20 border-t border-base-gray-light bg-base-gray-light/40">
+        <section className="py-12 md:py-16 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
-                <h2 className="font-mono text-2xl md:text-3xl font-medium max-w-lg">
-                    Garansi Codevela
-                </h2>
+                <div className="mb-8">
+                    <span className="font-mono text-xs uppercase tracking-widest text-base-gray font-semibold">Jaminan Kami</span>
+                    <h2 className="mt-1.5 font-mono text-2xl md:text-3xl font-semibold text-base-black">
+                        Garansi Codevela
+                    </h2>
+                </div>
 
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {GUARANTEES.map((guarantee, i) => {
                         const IconComponent = GUARANTEE_ICONS[guarantee.icon] || ShieldCheck;
                         return (
                             <motion.div
                                 key={guarantee.title}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 16 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-80px" }}
-                                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                                className="p-6 rounded-2xl border border-base-gray-light bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                                viewport={{ once: true, margin: "-60px" }}
+                                transition={{ duration: 0.4, delay: i * 0.08 }}
+                                className="p-7 rounded-xl border border-base-gray-light bg-base-white shadow-sm hover:shadow-md hover:border-base-gray-medium transition-all duration-200"
                             >
-                                <div className="w-10 h-10 rounded-xl bg-base-black text-base-white flex items-center justify-center mb-5 shadow-sm">
-                                    <IconComponent className="w-5 h-5 text-accent" />
+                                <div className="flex items-center gap-3 mb-3">
+                                    <div className="w-8 h-8 rounded-lg border border-base-gray-light bg-base-subtle flex items-center justify-center shrink-0">
+                                        <IconComponent className="w-4 h-4 text-base-gray-dark" />
+                                    </div>
+                                    <h3 className="font-mono text-sm font-semibold text-base-black">{guarantee.title}</h3>
                                 </div>
-                                <h3 className="font-medium text-lg text-base-black">{guarantee.title}</h3>
-                                <p className="mt-2 text-sm text-base-gray-dark leading-relaxed">
+                                <p className="text-sm text-base-gray-dark leading-relaxed">
                                     {guarantee.description}
                                 </p>
                             </motion.div>
@@ -44,4 +49,4 @@ export default function Guarantee() {
             </div>
         </section>
     );
-}
+}

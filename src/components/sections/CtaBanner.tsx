@@ -2,52 +2,57 @@
 
 import { motion } from "framer-motion";
 import { CONTACT } from "@/lib/data";
-import { MessageSquare, ArrowUpRight, Sparkles } from "lucide-react";
+import { MessageSquare, ArrowUpRight } from "lucide-react";
 
 export default function CtaBanner() {
     return (
-        <section className="py-14 md:py-20">
+        <section className="py-12 md:py-16 border-t border-base-gray-light">
             <div className="max-w-6xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, y: 24 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="relative rounded-3xl bg-base-black text-base-white p-8 md:p-14 overflow-hidden border border-white/10 shadow-2xl"
+                    className="relative rounded-2xl bg-base-black text-base-white p-8 md:p-12 overflow-hidden"
                 >
-                    {/* Background Subtle Accent Glow */}
-                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
-                    <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+                    {/* Subtle background texture — monochrome grid overlay */}
+                    <div
+                        className="absolute inset-0 opacity-[0.04]"
+                        style={{
+                            backgroundImage:
+                                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+                            backgroundSize: "28px 28px",
+                        }}
+                    />
 
-                    <div className="relative z-10 max-w-3xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-accent text-xs font-mono font-medium mb-6 backdrop-blur-sm border border-white/10">
-                            <Sparkles className="w-3.5 h-3.5" />
-                            <span>Konsultasi Gratis 24/7</span>
-                        </div>
+                    <div className="relative z-10 max-w-2xl">
+                        <span className="inline-block font-mono text-xs tracking-widest uppercase text-white/40 mb-4">
+                            Konsultasi Gratis
+                        </span>
 
-                        <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight leading-tight">
-                            Siap Mewujudkan Proyek Web atau Tugas Anda?
+                        <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+                            Siap Wujudkan Proyek<br className="hidden sm:block" /> atau Tugas Kamu?
                         </h2>
 
-                        <p className="mt-4 text-sm md:text-base text-base-gray leading-relaxed max-w-xl">
-                            Diskusikan detail fitur, harga, dan deadline Anda secara langsung dengan tim kami. Tanpa komitmen di awal.
+                        <p className="mt-4 text-sm md:text-base text-white/55 leading-relaxed max-w-xl">
+                            Diskusikan detail fitur, harga, dan deadline langsung dengan tim kami. Tanpa komitmen di awal.
                         </p>
 
-                        <div className="mt-8 flex flex-wrap items-center gap-4">
+                        <div className="mt-8 flex flex-wrap items-center gap-3">
                             {CONTACT.admins.map((admin, index) => (
                                 <a
                                     key={admin.phone}
                                     href={admin.waLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-sm font-medium transition-all duration-300 ${index === 0
-                                            ? "bg-accent text-base-black font-semibold hover:bg-accent/90 shadow-lg shadow-accent/20 hover:scale-[1.02]"
-                                            : "bg-white/10 text-white hover:bg-white/20 border border-white/15 hover:scale-[1.02]"
+                                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all duration-200 active:scale-95 ${index === 0
+                                        ? "bg-white text-base-black hover:bg-base-gray-light"
+                                        : "bg-white/10 text-white hover:bg-white/20 border border-white/15"
                                         }`}
                                 >
                                     <MessageSquare className="w-4 h-4" />
                                     <span>Chat {admin.name}</span>
-                                    <ArrowUpRight className="w-4 h-4 opacity-70" />
+                                    <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                                 </a>
                             ))}
                         </div>

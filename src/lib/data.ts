@@ -11,12 +11,12 @@ export const BENEFITS = [
     {
         icon: "Code2",
         title: "Kualitas & Kerapian",
-        description: "Clean code — kode terstruktur, mudah di-maintenance, bukan asal jalan.",
+        description: "Clean code: kode terstruktur, mudah di-maintenance, bukan asal jalan.",
     },
     {
         icon: "Clock",
         title: "Tepat Waktu",
-        description: "On-time delivery — komitmen penuh pada deadline yang disepakati di awal.",
+        description: "On-time delivery, komitmen penuh pada deadline yang disepakati di awal.",
     },
     {
         icon: "MessageSquare",
@@ -123,7 +123,7 @@ export const GUARANTEES = [
     {
         icon: "Lock",
         title: "Privasi Data",
-        description: "Jaminan kerahasiaan data proyek, tugas, atau ide klien — tidak dibagikan ke pihak lain.",
+        description: "Jaminan kerahasiaan data proyek, tugas, atau ide klien. Tidak dibagikan ke pihak lain.",
     },
 ];
 
@@ -156,7 +156,7 @@ export const PORTFOLIO: PortfolioItem[] = [
         title: "SIMKES — Sistem Informasi Manajemen Kesehatan",
         category: "Sistem Informasi",
         challenge: "Instansi kesehatan butuh sistem manajemen skala besar dengan banyak role pengguna dan modul yang terus berkembang.",
-        solution: "Dibangun modular per fitur — migrasi, seeder, dan struktur role/permission disiapkan sejak awal agar mudah diperluas ke modul berikutnya.",
+        solution: "Dibangun modular per fitur. Migrasi, seeder, dan struktur role/permission disiapkan sejak awal agar mudah diperluas ke modul berikutnya.",
         stack: ["Laravel 12", "Sanctum", "Spatie", "React", "Vite", "Tailwind"],
     },
     {
@@ -212,6 +212,7 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const SOCIALS = {
     instagram: "https://instagram.com/codevela.id",
+    tiktok: "https://tiktok.com/@codevela.id",
     linktree: "https://linktr.ee/codevela.id",
 };
 
@@ -237,7 +238,7 @@ export const PROCESS_STEPS = [
     {
         number: "04",
         title: "PENYERAHAN & PELUNASAN",
-        description: "Project selesai! Kami akan mendemokan hasilnya (via screenshot / screen record). setelah pelunasan, source code / aplikasi akan langsung full kita kirim.",
+        description: "Project selesai! Kami akan mendemokan hasilnya via screenshot atau screen record. Setelah pelunasan, source code atau aplikasi langsung kita kirim lengkap.",
         icon: "CheckCircle2",
     },
 ];
@@ -251,7 +252,7 @@ export const FAQS: FAQItem[] = [
     },
     {
         question: "Berapa lama waktu pengerjaannya?",
-        answer: "Tergantung kompleksitas — tugas kuliah/mini project biasanya 1–5 hari, company profile 1–2 minggu, custom web app/sistem informasi menyesuaikan scope. Estimasi pasti diberikan setelah konsultasi.",
+        answer: "Tergantung kompleksitas. Tugas kuliah/mini project biasanya 1–5 hari, company profile 1–2 minggu, custom web app/sistem informasi menyesuaikan scope. Estimasi pasti diberikan setelah konsultasi.",
     },
     {
         question: "Apakah melayani revisi di luar kesepakatan awal?",
