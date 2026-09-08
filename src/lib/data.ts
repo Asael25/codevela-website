@@ -118,7 +118,7 @@ export const GUARANTEES = [
     {
         icon: "RefreshCw",
         title: "Revisi Terukur",
-        description: "Bebas revisi minor pada tahap review, sebelum penyerahan final ke klien.",
+        description: "Bebas revisi minor sebanyak 3x pada tahap review, sebelum penyerahan final ke klien.",
     },
     {
         icon: "Lock",
