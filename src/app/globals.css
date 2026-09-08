@@ -42,3 +42,22 @@ html {
 .swiper-pagination-bullet-active {
   background: #111111 !important;
 }
+
+/* Custom scrollbar for FAQ questions container */
+.custom-faq-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #D8D4CE transparent;
+}
+.custom-faq-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-faq-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-faq-scrollbar::-webkit-scrollbar-thumb {
+  background: #D8D4CE;
+  border-radius: 9999px;
+}
+.custom-faq-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9A9590;
+}

@@ -220,19 +220,19 @@ export const TESTIMONIALS: Testimonial[] = [
         quote: "Makasii banyaakkkkk yaaa kakk ",
     },
     {
-        name: "Klien C",
+        name: "Dimas P***",
         role: "Sistem Informasi",
-        quote: "Komunikasinya enak, revisi ditangani tanpa drama, deadline juga ditepati.",
+        quote: "Komunikasinya enak dan jelas, revisi ditangani cepat, dan progres selalu di-update sampai tuntas.",
     },
     {
-        name: "Klien D",
+        name: "Reza A***",
         role: "Landing Page",
-        quote: "Desainnya modern, loading-nya ringan, langsung dipakai buat campaign tanpa banyak revisi.",
+        quote: "Desainnya modern, loading-nya super cepat dan responsif, langsung dipakai buat campaign tanpa kendala.",
     },
     {
-        name: "Klien E",
+        name: "Fajar K***",
         role: "Custom Web App",
-        quote: "Alur bisnisnya rumit tapi tetap dipetakan dengan rapi sebelum mulai coding.",
+        quote: "Alur logika dan skema databasenya dirancang rapi sejak awal, pas implementasi coding jadi minim bug.",
     },
 ];
 
