@@ -210,7 +210,7 @@ export type Testimonial = {
 // 2 pertama asli dari highlight IG, sisanya masih placeholder
 export const TESTIMONIALS: Testimonial[] = [
     {
-        name: "Chris",
+        name: "C***s",
         role: "Tugas Kuliah",
         quote: "Udah aku cek dan sesuai permintaan, mantap banget hasilnya ",
     },
@@ -326,7 +326,7 @@ export const FAQS: FAQItem[] = [
         question: "Teknologi dan bahasa pemrograman apa saja yang didukung?",
         category: "Teknis & Garansi",
         badge: "Multi-Stack Modern",
-        answer: "Kami menguasai ekosistem pemrograman modern: Frontend (React, Next.js, Vue, Tailwind CSS, JavaScript), Backend (Laravel, PHP, Node.js, Express, Python), Database (MySQL, PostgreSQL, MongoDB, SQLite), serta implementasi REST API dan integrasi Payment Gateway/WhatsApp.",
+        answer: "Kami menguasai ekosistem pemrograman modern: Frontend Web (React, Next.js, Vue, Tailwind CSS, JavaScript), Mobile Development (Flutter, Dart), Backend (Laravel, PHP, Node.js, Express, Python), Database (MySQL, PostgreSQL, MongoDB, SQLite), serta implementasi REST API dan integrasi Payment Gateway/WhatsApp.",
         keyPoints: ["Laravel / PHP / CodeIgniter", "Next.js / React / Vue / Tailwind", "Python / Node.js / REST API"],
     },
     {
