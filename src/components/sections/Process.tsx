@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { PROCESS_STEPS } from "@/lib/data";
-import { MessageSquareCode, Calculator, Terminal, CheckCircle2, LucideIcon, ArrowDown } from "lucide-react";
+import { MessageSquareCode, Calculator, Terminal, CheckCircle2, LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
     MessageSquareCode,
@@ -68,16 +68,11 @@ export default function Process() {
                     </div>
 
                     {/* CONNECTOR 01 → 02 (right) */}
-                    <div className="my-2 flex justify-center md:-my-3 relative z-10">
-                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-dark">
-                            <svg width="180" height="54" viewBox="0 0 180 54" fill="none">
-                                <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
-                                <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <div className="flex md:hidden text-base-gray-dark py-2">
-                            <ArrowDown className="w-5 h-5 animate-bounce" />
-                        </div>
+                    <div className="my-2 md:-my-3 flex justify-center items-center relative z-10 text-base-gray-dark py-1">
+                        <svg width="180" height="54" viewBox="0 0 180 54" fill="none" className="max-w-[160px] md:max-w-none">
+                            <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+                            <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </div>
 
                     {/* STEP 02 — RIGHT */}
@@ -107,16 +102,11 @@ export default function Process() {
                     </div>
 
                     {/* CONNECTOR 02 → 03 (left) */}
-                    <div className="my-2 flex justify-center md:-my-3 relative z-10">
-                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-dark">
-                            <svg width="180" height="54" viewBox="0 0 180 54" fill="none">
-                                <path d="M 150 5 C 80 5, 30 18, 30 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
-                                <path d="M 24 38 L 30 46 L 36 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <div className="flex md:hidden text-base-gray-dark py-2">
-                            <ArrowDown className="w-5 h-5 animate-bounce" />
-                        </div>
+                    <div className="my-2 md:-my-3 flex justify-center items-center relative z-10 text-base-gray-dark py-1">
+                        <svg width="180" height="54" viewBox="0 0 180 54" fill="none" className="max-w-[160px] md:max-w-none">
+                            <path d="M 150 5 C 80 5, 30 18, 30 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+                            <path d="M 24 38 L 30 46 L 36 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </div>
 
                     {/* STEP 03 — LEFT */}
@@ -146,16 +136,11 @@ export default function Process() {
                     </div>
 
                     {/* CONNECTOR 03 → 04 (right) */}
-                    <div className="my-2 flex justify-center md:-my-3 relative z-10">
-                        <div className="hidden md:flex items-center justify-center py-2 text-base-gray-dark">
-                            <svg width="180" height="54" viewBox="0 0 180 54" fill="none">
-                                <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
-                                <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <div className="flex md:hidden text-base-gray-dark py-2">
-                            <ArrowDown className="w-5 h-5 animate-bounce" />
-                        </div>
+                    <div className="my-2 md:-my-3 flex justify-center items-center relative z-10 text-base-gray-dark py-1">
+                        <svg width="180" height="54" viewBox="0 0 180 54" fill="none" className="max-w-[160px] md:max-w-none">
+                            <path d="M 30 5 C 100 5, 150 18, 150 44" stroke="currentColor" strokeWidth="2" strokeDasharray="5 4" strokeLinecap="round" />
+                            <path d="M 144 38 L 150 46 L 156 38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </div>
 
                     {/* STEP 04 — RIGHT */}
