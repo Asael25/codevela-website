@@ -139,6 +139,7 @@ export type PortfolioItem = {
     highlights: string[];
     demoBadge: string;
     liveUrl?: string; // Ganti dengan link akses live demo proyek
+    imageUrl?: string;
 };
 
 export const PORTFOLIO_CATEGORIES: PortfolioCategory[] = [
@@ -178,6 +179,7 @@ export const PORTFOLIO: PortfolioItem[] = [
         stack: ["Laravel", "MySQL", "Bootstrap"],
         highlights: ["Pencatatan kardus & unit kerja", "Cetak Berita Acara otomatis (PDF)", "Log riwayat pengiriman transparan"],
         demoBadge: "Gov Enterprise",
+        imageUrl: "/portfolio/pu-bina-marga.png",
     },
     {
         title: "MCrepes — Sistem Inventori & Algoritma EOQ",
@@ -188,6 +190,7 @@ export const PORTFOLIO: PortfolioItem[] = [
         stack: ["Laravel", "MySQL", "ChartJS"],
         highlights: ["Kalkulasi otomatis Reorder Point", "Grafik tren stok bahan baku", "Lengkap dokumentasi logika coding"],
         demoBadge: "Akademik & Riset",
+        imageUrl: "/portfolio/mcrepes.png",
     },
     {
         title: "Apex Creative — Agency Portfolio & Client Intake",

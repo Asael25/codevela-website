@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -9,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import PortfolioCard from "@/components/ui/PortfolioCard";
-import { PORTFOLIO, PORTFOLIO_CATEGORIES, PortfolioCategory } from "@/lib/data";
+import { PORTFOLIO, PORTFOLIO_CATEGORIES, PortfolioCategory, CONTACT } from "@/lib/data";
 import {
     ChevronLeft,
     ChevronRight,
@@ -149,56 +150,77 @@ export default function Portfolio() {
                                                         </div>
                                                     </div>
 
-                                                    {/* Simulated Visual App Canvas */}
-                                                    <div className="p-6 md:p-8 bg-gradient-to-br from-base-white via-base-subtle/50 to-base-subtle min-h-[260px] flex flex-col justify-between relative overflow-hidden">
-                                                        {/* Watermark badge */}
-                                                        <div className="absolute top-4 right-4 text-6xl font-mono font-black text-base-black/[0.03] select-none pointer-events-none">
-                                                            0{idx + 1}
-                                                        </div>
-
-                                                        {/* Mockup App Header */}
-                                                        <div className="flex items-center justify-between border-b border-base-gray-light/60 pb-3">
-                                                            <div className="flex items-center gap-2">
-                                                                <div className="w-7 h-7 rounded-lg bg-base-black text-base-white flex items-center justify-center font-mono text-xs font-bold">
-                                                                    {"</>"}
-                                                                </div>
-                                                                <span className="font-mono text-xs font-bold text-base-black truncate max-w-[180px]">
-                                                                    {item.title}
+                                                    {/* Screenshot Image or Simulated Visual App Canvas */}
+                                                    {item.imageUrl ? (
+                                                        <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-base-subtle group/img">
+                                                            <Image
+                                                                src={item.imageUrl}
+                                                                alt={item.title}
+                                                                fill
+                                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 700px"
+                                                                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-base-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                                                                <span className="font-mono text-xs text-base-white bg-base-black/80 px-2.5 py-1 rounded-md backdrop-blur-xs flex items-center gap-1.5 shadow-sm">
+                                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                                                    Tampilan Sistem Nyata
+                                                                </span>
+                                                                <span className="font-mono text-[11px] text-base-white/90 bg-base-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
+                                                                    {item.demoBadge}
                                                                 </span>
                                                             </div>
-                                                            <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-base-black text-base-white">
-                                                                {item.category}
-                                                            </span>
                                                         </div>
-
-                                                        {/* Mockup Body Content Card */}
-                                                        <div className="my-5 p-4 rounded-xl border border-base-gray-light/80 bg-base-white/90 shadow-sm backdrop-blur-sm">
-                                                            <div className="flex items-center gap-2 mb-2">
-                                                                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                                                <span className="font-mono text-xs font-semibold text-base-black">
-                                                                    Arsitektur & Solusi:
-                                                                </span>
+                                                    ) : (
+                                                        <div className="p-6 md:p-8 bg-gradient-to-br from-base-white via-base-subtle/50 to-base-subtle min-h-[260px] flex flex-col justify-between relative overflow-hidden">
+                                                            {/* Watermark badge */}
+                                                            <div className="absolute top-4 right-4 text-6xl font-mono font-black text-base-black/[0.03] select-none pointer-events-none">
+                                                                0{idx + 1}
                                                             </div>
-                                                            <p className="text-xs text-base-gray-dark leading-relaxed line-clamp-3">
-                                                                {item.solution}
-                                                            </p>
-                                                        </div>
 
-                                                        {/* Mockup Footer Stats & Stack Bar */}
-                                                        <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-base-gray-light/60 text-xs font-mono text-base-gray-medium">
-                                                            <div className="flex items-center gap-2">
-                                                                <Code2 className="w-3.5 h-3.5 text-base-black" />
-                                                                <span className="text-base-black font-semibold">Clean Code Standards</span>
-                                                            </div>
-                                                            <div className="flex gap-1.5">
-                                                                {item.stack.slice(0, 3).map((st) => (
-                                                                    <span key={st} className="px-1.5 py-0.5 rounded border border-base-gray-light bg-base-white text-[10px] text-base-gray-dark">
-                                                                        {st}
+                                                            {/* Mockup App Header */}
+                                                            <div className="flex items-center justify-between border-b border-base-gray-light/60 pb-3">
+                                                                <div className="flex items-center gap-2">
+                                                                    <div className="w-7 h-7 rounded-lg bg-base-black text-base-white flex items-center justify-center font-mono text-xs font-bold">
+                                                                        {"</>"}
+                                                                    </div>
+                                                                    <span className="font-mono text-xs font-bold text-base-black truncate max-w-[180px]">
+                                                                        {item.title}
                                                                     </span>
-                                                                ))}
+                                                                </div>
+                                                                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-base-black text-base-white">
+                                                                    {item.category}
+                                                                </span>
+                                                            </div>
+
+                                                            {/* Mockup Body Content Card */}
+                                                            <div className="my-5 p-4 rounded-xl border border-base-gray-light/80 bg-base-white/90 shadow-sm backdrop-blur-sm">
+                                                                <div className="flex items-center gap-2 mb-2">
+                                                                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                                                                    <span className="font-mono text-xs font-semibold text-base-black">
+                                                                        Arsitektur & Solusi:
+                                                                    </span>
+                                                                </div>
+                                                                <p className="text-xs text-base-gray-dark leading-relaxed line-clamp-3">
+                                                                    {item.solution}
+                                                                </p>
+                                                            </div>
+
+                                                            {/* Mockup Footer Stats & Stack Bar */}
+                                                            <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-base-gray-light/60 text-xs font-mono text-base-gray-medium">
+                                                                <div className="flex items-center gap-2">
+                                                                    <Code2 className="w-3.5 h-3.5 text-base-black" />
+                                                                    <span className="text-base-black font-semibold">Clean Code Standards</span>
+                                                                </div>
+                                                                <div className="flex gap-1.5">
+                                                                    {item.stack.slice(0, 3).map((st) => (
+                                                                        <span key={st} className="px-1.5 py-0.5 rounded border border-base-gray-light bg-base-white text-[10px] text-base-gray-dark">
+                                                                            {st}
+                                                                        </span>
+                                                                    ))}
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    )}
                                                 </div>
                                             </div>
 
@@ -250,12 +272,12 @@ export default function Portfolio() {
                                                 {/* Project Live Access Link */}
                                                 <div className="mt-7 flex items-center gap-3">
                                                     <a
-                                                        href={item.liveUrl || "#"}
+                                                        href={item.liveUrl || `${CONTACT.primaryWaLink}?text=${encodeURIComponent(`Halo Codevela, saya tertarik dengan proyek portofolio "${item.title}". Bisa konsultasi seputar proyek serupa?`)}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-base-black text-base-white hover:bg-base-gray-dark active:scale-95 transition-all shadow-sm"
                                                     >
-                                                        <span>Lihat Live Demo</span>
+                                                        <span>{item.liveUrl ? "Lihat Live Demo" : "Konsultasi Proyek Serupa"}</span>
                                                         <ArrowUpRight className="w-3.5 h-3.5" />
                                                     </a>
                                                 </div>

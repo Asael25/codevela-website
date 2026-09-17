@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PortfolioItem, CONTACT } from "@/lib/data";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
@@ -24,9 +25,21 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
                 </div>
             </div>
 
-            {/* Visual Card Canvas */}
-            <div className="p-5 border-b border-base-gray-light/60 bg-gradient-to-b from-base-subtle/30 to-base-white flex flex-col justify-center min-h-[100px]">
-                <h4 className="font-mono text-base font-semibold text-base-black group-hover:text-base-black/80 transition-colors">
+            {/* Visual Card Image or Canvas */}
+            {item.imageUrl && (
+                <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-base-gray-light/60 bg-base-subtle">
+                    <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 500px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                </div>
+            )}
+
+            <div className="p-4 sm:p-5 border-b border-base-gray-light/60 bg-gradient-to-b from-base-subtle/30 to-base-white flex flex-col justify-center">
+                <h4 className="font-mono text-sm sm:text-base font-semibold text-base-black group-hover:text-base-black/80 transition-colors">
                     {item.title}
                 </h4>
                 <p className="mt-1 text-xs text-base-gray-medium font-mono">
@@ -69,12 +82,12 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
 
                     {/* Action link */}
                     <a
-                        href={item.liveUrl || "#"}
+                        href={item.liveUrl || waLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-between text-xs font-mono font-medium text-base-black hover:text-base-gray-dark pt-1 group/btn"
                     >
-                        <span>Lihat Live Demo</span>
+                        <span>{item.liveUrl ? "Lihat Live Demo" : "Tanya Proyek Ini"}</span>
                         <ArrowUpRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </a>
                 </div>
