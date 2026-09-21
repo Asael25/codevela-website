@@ -361,3 +361,28 @@ export const FAQS: FAQItem[] = [
         keyPoints: ["Penjelasan alur logika coding", "Catatan struktur folder & controller", "Siap untuk presentasi/sidang"],
     },
 ];
+
+export type TechStackItem = {
+    name: string;
+    category: string;
+    icon: string;
+    color: string;
+};
+
+export const TECH_STACK: TechStackItem[] = [
+    { name: "Next.js", category: "Fullstack / SSR", icon: "SiNextdotjs", color: "#000000" },
+    { name: "Laravel", category: "Backend Framework", icon: "SiLaravel", color: "#FF2D20" },
+    { name: "React", category: "Frontend Library", icon: "SiReact", color: "#61DAFB" },
+    { name: "Flutter", category: "Mobile Apps", icon: "SiFlutter", color: "#02569B" },
+    { name: "MySQL", category: "Relational DB", icon: "SiMysql", color: "#4479A1" },
+    { name: "Supabase", category: "BaaS & Postgres", icon: "SiSupabase", color: "#3ECF8E" },
+    { name: "GitHub", category: "Version Control", icon: "SiGithub", color: "#24292F" },
+    { name: "Tailwind CSS", category: "UI Styling", icon: "SiTailwindcss", color: "#06B6D4" },
+    { name: "TypeScript", category: "Typed Language", icon: "SiTypescript", color: "#3178C6" },
+    { name: "Node.js", category: "JS Runtime", icon: "SiNodedotjs", color: "#5FA04E" },
+    { name: "PostgreSQL", category: "SQL Database", icon: "SiPostgresql", color: "#4169E1" },
+    { name: "Python", category: "Backend / Scripting", icon: "SiPython", color: "#3776AB" },
+    { name: "Docker", category: "Containerization", icon: "SiDocker", color: "#2496ED" },
+    { name: "PHP", category: "Server Language", icon: "SiPhp", color: "#777BB4" },
+    { name: "Postman", category: "API Testing", icon: "SiPostman", color: "#FF6C37" },
+];

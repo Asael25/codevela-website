@@ -5,6 +5,7 @@ import Benefits from "@/components/sections/Benefits";
 import Process from "@/components/sections/Process";
 import Pricing from "@/components/sections/Pricing";
 import Guarantee from "@/components/sections/Guarantee";
+import TechStack from "@/components/sections/TechStack";
 import Portfolio from "@/components/sections/Portfolio";
 import Testimonials from "@/components/sections/Testimonials";
 import CtaBanner from "@/components/sections/CtaBanner";
@@ -20,6 +21,7 @@ export default function Home() {
         <Process />
         <Pricing />
         <Guarantee />
+        <TechStack />
         <Portfolio />
         <Testimonials />
         <CtaBanner />
