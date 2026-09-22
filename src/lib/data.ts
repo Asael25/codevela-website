@@ -127,80 +127,164 @@ export const GUARANTEES = [
     },
 ];
 
-export type PortfolioCategory = "Highlight" | "Company Profile" | "Sistem Informasi" | "Tugas Kuliah";
+export type PortfolioCategory =
+    | "Highlight"
+    | "Sistem Informasi"
+    | "Company Profile"
+    | "Mobile Apps"
+    | "Tugas Kuliah";
 
 export type PortfolioItem = {
+    number?: string;
+    slug: string;
     title: string;
+    year?: string;
     category: Exclude<PortfolioCategory, "Highlight">;
+    categorySubtitle?: string;
     tagline: string;
-    challenge: string;
-    solution: string;
+    challenge?: string;
+    solution?: string;
+    description: string;
     stack: string[];
     highlights: string[];
     demoBadge: string;
-    liveUrl?: string; // Ganti dengan link akses live demo proyek
+    liveUrl?: string;
+    githubUrl?: string;
     imageUrl?: string;
+    images?: string[];
+    imageFit?: "cover" | "contain";
 };
 
 export const PORTFOLIO_CATEGORIES: PortfolioCategory[] = [
     "Highlight",
-    "Company Profile",
     "Sistem Informasi",
+    "Company Profile",
+    "Mobile Apps",
     "Tugas Kuliah",
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
     {
-        title: "CV. Chandra Kirana Indonesia",
+        number: "01",
+        slug: "roommaster",
+        title: "RoomMaster",
+        year: "2026",
+        category: "Sistem Informasi",
+        categorySubtitle: "Agentic AI × Hotel Management",
+        tagline: "Autonomous AI co-pilot untuk operasional hotel & reservasi real-time.",
+        description: "Platform PMS generasi baru dengan Agentic AI co-pilot otonom untuk otomasi reservasi, permintaan tamu, dan pengecekan ketersediaan kamar via tool-calling aman.",
+        challenge: "Operasional hotel konvensional sering terhambat proses reservasi lambat, koordinasi manual kamar kosong, dan beban inquiry tamu yang menumpuk di meja front-desk.",
+        solution: "Agentic AI co-pilot otonom dengan ReAct pattern dan structured tool-calling aman yang terintegrasi langsung ke PostgreSQL via Supabase untuk orkestrasi operasional hotel real-time.",
+        stack: ["Next.js", "TypeScript", "LangChain", "OpenAI GPT-4", "Supabase", "PostgreSQL"],
+        highlights: [
+            "Agentic AI co-pilot dengan ReAct Pattern & tool-calling aman",
+            "Database PostgreSQL real-time dengan Row-Level Security (RLS)",
+        ],
+        demoBadge: "Agentic AI",
+        liveUrl: "https://roommaster.vercel.app/",
+        githubUrl: "https://github.com/neovdn/RoomMasterb-1",
+        imageUrl: "/portfolio/roommaster.webp",
+    },
+    {
+        number: "02",
+        slug: "mutiara-bangsa",
+        title: "Mutiara Bangsa",
+        year: "2025",
+        category: "Sistem Informasi",
+        categorySubtitle: "AI-Powered Retail & Forecasting",
+        tagline: "Digital storefront dengan demand forecasting & restock barang otomatis.",
+        description: "Platform digital commerce ritel dengan analitik demand forecasting berbasis moving average untuk memprediksi kebutuhan stok dan rekomendasi reorder otomatis.",
+        challenge: "Distributor ritel regional kesulitan menyeimbangkan persediaan barang musiman sehingga sering terjadi overstock pada barang lambat atau kehabisan stok saat permintaan tinggi.",
+        solution: "Storefront e-commerce modern dengan dasbor predictive analytics berbasis sales velocity aggregation dan moving average forecasting untuk rekomendasi restock presisi.",
+        stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Analytics"],
+        highlights: [
+            "Etalase belanja cepat dengan checkout instan terintegrasi",
+            "Demand forecasting & rekomendasi restock otomatis terpadu",
+        ],
+        demoBadge: "Predictive Commerce",
+        liveUrl: "https://mutiarabangsa.vercel.app/",
+        githubUrl: "https://github.com/neovdn/mutiarabangsa",
+        imageUrl: "/portfolio/mutiarabangsa.webp",
+    },
+    {
+        number: "03",
+        slug: "migaskita",
+        title: "MigasKita",
+        year: "2024 — 2025",
+        category: "Mobile Apps",
+        categorySubtitle: "Enterprise Mobile HR & Geofencing",
+        tagline: "Mobile attendance tenaga kerja dengan validasi selfie & polygon geofencing.",
+        description: "Aplikasi absensi mobile cross-platform personel sektor energi dengan batasan polygon geofencing presisi tinggi, anti-fake GPS, dan sinkronisasi offline-first.",
+        challenge: "Verifikasi kehadiran tenaga kerja di sektor energi dengan lokasi operasional tersebar sering rentan kecurangan fake GPS dan kendala koneksi di area remote.",
+        solution: "Aplikasi mobile Flutter berarsitektur offline-first dengan polygon geofencing akurat, deteksi anti-mock GPS/root, serta validasi selfie kamera langsung berpenanda waktu.",
+        stack: ["Flutter", "Dart", "BLoC State", "Firebase", "Google Maps API"],
+        highlights: [
+            "Polygon geofencing presisi tinggi & deteksi anti-mock GPS",
+            "Validasi swafoto langsung & sinkronisasi offline-first Cloud Firestore",
+        ],
+        demoBadge: "Mobile Enterprise",
+        githubUrl: "https://github.com/neovdn/migaskita",
+        imageUrl: "/portfolio/migaskita.webp",
+        images: ["/portfolio/migaskita.webp", "/portfolio/migaskita_phone.webp"],
+        imageFit: "contain",
+    },
+    {
+        number: "04",
+        slug: "chandra-kirana-indonesia",
+        title: "CV Chandra Kirana Indonesia",
+        year: "2025",
         category: "Company Profile",
-        tagline: "Website Korporat Kontraktor Konstruksi Multi-Halaman",
-        challenge: "Kontraktor konstruksi butuh company profile multi-halaman yang terasa premium, kredibel di mata klien korporat, dan mudah diakses di smartphone.",
-        solution: "Website multi-halaman berkinerja tinggi dengan portofolio proyek terfilter, interaktif testimoni, dan formulir konsultasi terintegrasi.",
-        stack: ["Tailwind CSS", "Vanilla JS", "FormSubmit"],
-        highlights: ["Desain elegan & mobile-first", "Filter portofolio proyek dinamis", "Formulir inquiry terhubung email"],
-        demoBadge: "Corporate Live",
+        categorySubtitle: "Corporate Profile & Industrial Services",
+        tagline: "Website profil korporat resmi dan katalog layanan teknik industri.",
+        description: "Portal profil korporat kontraktor industri resmi dengan katalog layanan teknik terstruktur, performa tinggi Static Site Generation (SSG), dan integrasi inquiry B2B.",
+        challenge: "Perusahaan kontraktor industri membutuhkan portal korporat yang kokoh, kredibel, dan berkecepatan tinggi untuk memamerkan portofolio proyek konstruksi kepada klien B2B.",
+        solution: "Platform web korporat berbasis Next.js App Router dengan Static Site Generation (SSG), tipografi industri modern, katalog layanan interaktif, dan integrasi inquiry instan.",
+        stack: ["Next.js (SSG)", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+        highlights: [
+            "Katalog teknik & konstruksi industri terstruktur dan responsif",
+            "High-performance SSG & integrasi jalur inquiry B2B WhatsApp",
+        ],
+        demoBadge: "Client Production",
+        liveUrl: "https://www.chandrakiranaindonesia.com/",
+        imageUrl: "/portfolio/cki.webp",
     },
     {
-        title: "SIMKES — Sistem Informasi Manajemen Kesehatan",
+        number: "05",
+        slug: "sistem-arsip-bina-marga",
+        title: "Sistem Arsip & Kepegawaian DPU Bina Marga",
+        year: "2024",
         category: "Sistem Informasi",
-        tagline: "Platform Tata Kelola Faskes & Rekam Medis Modular",
-        challenge: "Instansi kesehatan memerlukan sistem pencatatan pasien dan modul manajemen terpadu yang siap dikembangkan bertahap dengan banyak level akses pengguna.",
-        solution: "Arsitektur modular dengan pembagian role & permission dinamis (Spatie), integrasi API autentikasi Sanctum, dan antarmuka responsif React-Tailwind.",
-        stack: ["Laravel 12", "Sanctum", "Spatie", "React", "Tailwind"],
-        highlights: ["Role-based access control fleksibel", "Struktur database relational scalable", "Export laporan medis cepat"],
-        demoBadge: "Modular System",
-    },
-    {
-        title: "Sistem Arsip & Kepegawaian DPU Bina Marga Jatim",
-        category: "Sistem Informasi",
-        tagline: "Digitalisasi Pencatatan Arsip Fisik & Cetak Berita Acara",
+        categorySubtitle: "Gov Archive & Staff Management",
+        tagline: "Digitalisasi inventaris arsip fisik dan cetak Berita Acara otomatis.",
+        description: "Sistem digitalisasi inventaris arsip fisik dan data kepegawaian dinas dengan tracking serah-terima berkas per unit kerja serta modul cetak Berita Acara PDF standar.",
         challenge: "Pengelolaan arsip fisik unit kerja dan dokumen kepegawaian masih manual dan rentan selisih data berita acara serah-terima berkas.",
         solution: "Sistem digitalisasi inventaris arsip dengan tracking penerima, tanggal serah berkas, dan modul cetak otomatis Berita Acara dalam format standar.",
-        stack: ["Laravel", "MySQL", "Bootstrap"],
-        highlights: ["Pencatatan kardus & unit kerja", "Cetak Berita Acara otomatis (PDF)", "Log riwayat pengiriman transparan"],
+        stack: ["Laravel", "MySQL", "Bootstrap", "DomPDF", "Blade"],
+        highlights: [
+            "Pencatatan kardus arsip & tracking serah terima berkas",
+            "Cetak Berita Acara serah terima otomatis format standar PDF",
+        ],
         demoBadge: "Gov Enterprise",
-        imageUrl: "/portfolio/pu-bina-marga.png",
+        imageUrl: "/portfolio/pu-bina-marga.webp",
     },
     {
-        title: "MCrepes — Sistem Inventori & Algoritma EOQ",
+        number: "06",
+        slug: "mcrepes-eoq",
+        title: "MCrepes — Inventori & Algoritma EOQ",
+        year: "2024",
         category: "Tugas Kuliah",
-        tagline: "Manajemen Stok F&B Otomatis dengan Klasifikasi ABC",
+        categorySubtitle: "Supply Chain & EOQ Algorithm",
+        tagline: "Manajemen stok F&B dengan klasifikasi ABC & Reorder Point otomatis.",
+        description: "Aplikasi web inventori UMKM kuliner yang mengotomasi perhitungan klasifikasi ABC, Economic Order Quantity (EOQ), Safety Stock, dan kalkulasi Reorder Point.",
         challenge: "Kebutuhan tugas akhir yang menguji implementasi teori supply chain konkret untuk mengontrol stok bahan baku UMKM tanpa penumpukan modal.",
         solution: "Aplikasi inventori berbasis web yang mengotomasi perhitungan ABC Classification, Economic Order Quantity (EOQ), Safety Stock, dan kalkulasi Reorder Point.",
-        stack: ["Laravel", "MySQL", "ChartJS"],
-        highlights: ["Kalkulasi otomatis Reorder Point", "Grafik tren stok bahan baku", "Lengkap dokumentasi logika coding"],
+        stack: ["Laravel", "MySQL", "Chart.js", "Bootstrap", "Blade"],
+        highlights: [
+            "Kalkulasi otomatis Reorder Point & Safety Stock",
+            "Visualisasi tren stok & klasifikasi ABC bahan baku akurat",
+        ],
         demoBadge: "Akademik & Riset",
-        imageUrl: "/portfolio/mcrepes.png",
-    },
-    {
-        title: "Apex Creative — Agency Portfolio & Client Intake",
-        category: "Company Profile",
-        tagline: "High-Performance Portfolio dengan Konversi Klien Cepat",
-        challenge: "Studio kreatif butuh identitas digital bernuansa modern minimalis yang cepat dibuka oleh klien internasional tanpa lagging.",
-        solution: "Website showcase modern berbasis Next.js dengan animasi micro-interaction halus, integrasi booking kalender, dan optimasi Core Web Vitals 99+.",
-        stack: ["Next.js", "Tailwind CSS", "Framer Motion"],
-        highlights: ["Lighthouse Score 99+", "Animasi interaktif halus", "Form briefing proyek terstruktur"],
-        demoBadge: "Showcase Ready",
+        imageUrl: "/portfolio/mcrepes.webp",
     },
 ];
 
