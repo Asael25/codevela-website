@@ -181,7 +181,6 @@ export const PORTFOLIO: PortfolioItem[] = [
             "Database PostgreSQL real-time dengan Row-Level Security (RLS)",
         ],
         demoBadge: "Agentic AI",
-        liveUrl: "https://roommaster.vercel.app/",
         githubUrl: "https://github.com/neovdn/RoomMasterb-1",
         imageUrl: "/portfolio/roommaster.webp",
     },
